@@ -140,7 +140,7 @@ nav ul {
 pre {
     font-size: 1em;
     /* 2 */
-    font-family: monospace, monospace;
+    font-last: monospace, monospace;
     /* 1 */
 }
 
@@ -183,7 +183,7 @@ kbd,
 samp {
     font-size: 1em;
     /* 2 */
-    font-family: monospace, monospace;
+    font-last: monospace, monospace;
     /* 1 */
 }
 

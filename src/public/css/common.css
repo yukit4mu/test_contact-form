@@ -1,23 +1,23 @@
-.body-area {
-    background: #fff;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+.body-area{
+    background:#fff;
+    margin:0;
+    padding:0;
+    width:100%;
 }
 
-.header-index {
-    padding: 10px 40px;
-    text-align: center;
-    position: relative;
-    border-bottom: 1px solid #deb887;
-    background: #fff;
+.header-index{
+    padding:10px 40px;
+    text-align:center;
+    position:relative;
+    border-bottom:1px solid #deb887;
+    background:#fff;
 }
 
-.header-title {
-    font-size: 25px;
-    color: #deb887;
+.header-title{
+    font-size:25px;
+    color:#deb887;
 }
 
-.main-area {
-    padding: 30px 50px;
+.main-area{
+    padding:30px 50px;
 }

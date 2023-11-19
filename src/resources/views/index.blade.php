@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 @endsection
 
 @section('content')
@@ -15,18 +16,18 @@
                     <th class="column-title">お名前<span class="attention">※</span></th>
                     <td id="name" class="table-cell">
                         <div class="name-separate">
-                            <input class="input-area" type="text" name="last-name" placeholder="例）山田" value="{{old('lastName')}}">
-                            <input class="input-area" type="text" name="first-name" placeholder="例）太郎" value="{{old('firstName')}}">
+                        <input class="input-area" type="text" name="family-name" placeholder="例）山田" value="{{old('familyName')}}">
+                        <input class="input-area" type="text" name="first-name" placeholder="例）太郎" value="{{old('firstName')}}">
                         </div>
                         <div class="error-message name_error">
-                            <div class="last-name_error">
-                                @error('last-name')
-                                {{$message}}
+                            <div class="family-name_error">
+                                @error('family-name')
+                                    {{$message}}
                                 @enderror
                             </div>
                             <div class="first-name_error">
                                 @error('first-name')
-                                {{$message}}
+                                    {{$message}}
                                 @enderror
                             </div>
                         </div>
@@ -49,7 +50,7 @@
                         </div></br>
                         <div class="error-message">
                             @error('gender')
-                            {{$message}}
+                                {{$message}}
                             @enderror
                         </div>
                     </td>
@@ -60,7 +61,7 @@
                         <input class="input-area email-input" type="email" name="email" placeholder="test@example.com" value="{{old('email')}}">
                         <div class="error-message">
                             @error('email')
-                            {{$message}}
+                                {{$message}}
                             @enderror
                         </div>
                     </td>
@@ -69,17 +70,17 @@
                     <th class="column-title">電話番号<span class="attention">※</span></th>
                     <td id="tel" class="table-cell">
                         <div id="tel-align">
-                            <input class="input-area tel-input" name="first-tel" value="{{old('firstTel')}}">
-                            <span class="tel-interface">-</span>
-                            <input class="input-area tel-input" name="second-tel" value="{{old('secondTel')}}">
-                            <span class="tel-interface">-</span>
-                            <input class="input-area tel-input" name="third-tel" value="{{old('thirdTel')}}">
+                        <input class="input-area tel-input" name="first-three" value="{{old('firstTel')}}">
+                        <span class="tell-interface">-</span>
+                        <input class="input-area tel-input" name="second-three" value="{{old('secondTel')}}">
+                        <span class="tell-interface">-</span>
+                        <input class="input-area tel-input" name="third-three" value="{{old('thirdTel')}}">
                         </div>
-                        <div class="error-message">
-                            @if($errors->has('first-tel') || $errors->has('second-tel') || $errors->has('third-tel') )
+                    <div class="error-message">
+                        @if($errors->has('first-three') || $errors->has('second-three') || $errors->has('third-three') )
                             電話番号を入力してください
-                            @endif
-                        </div>
+                        @endif
+                    </div>
                     </td>
                 </tr>
                 <tr class="table-line">
@@ -88,7 +89,7 @@
                         <input class="input-area address-input" type="text" name="address" placeholder="例）東京都渋谷区千駄ヶ谷1-2-3" value="{{old('address')}}">
                         <div class="error-message">
                             @error('address')
-                            {{$message}}
+                                {{$message}}
                             @enderror
                         </div>
                     </td>
@@ -103,18 +104,18 @@
                     <th class="column-title">お問い合わせの種類<span class="attention">※</span></th>
                     <td class="table-cell">
                         <div id="category">
-                            <select class="input-area category-select" name="category_id" value="{{old('category_id')}}">
-                                <option selected disabled>選択してください</option>
-                                <option value="商品のお届けについて">1.商品のお届けについて</option>
-                                <option value="商品の交換について">2.商品の交換について</option>
-                                <option value="商品トラブル">3.商品トラブル</option>
-                                <option value="ショップへのお問い合わせ">4.ショップへのお問い合わせ</option>
-                                <option value="その他">5.その他</option>
-                            </select>
+                        <select class="input-area category-select" name="category_id" value="{{old('category_id')}}">
+                            <option selected disabled>選択してください</option>
+                            <option value="商品のお届けについて">1.商品のお届けについて</option>
+                            <option value="商品の交換について">2.商品の交換について</option>
+                            <option value="商品トラブル">3.商品トラブル</option>
+                            <option value="ショップへのお問い合わせ">4.ショップへのお問い合わせ</option>
+                            <option value="その他">5.その他</option>
+                        </select>
                         </div>
                         <div class="error-message">
                             @error('category_id')
-                            {{$message}}
+                                {{$message}}
                             @enderror
                         </div>
                     </td>
@@ -125,7 +126,7 @@
                         <textarea class="input-area detail-text" name="detail" placeholder="お問い合わせ内容をご記載ください">{{old('detail')}}</textarea>
                         <div class="error-message">
                             @error('detail')
-                            {{$message}}
+                                {{$message}}
                             @enderror
                         </div>
                     </td>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -63,7 +64,7 @@ class ContactController extends Controller
         $form = $request->all();
         $form["gender"] = $gender;
         $form["category_id"] = $category_id;
-
+        Contact::create($form);
         return view('thanks');
     }
 }

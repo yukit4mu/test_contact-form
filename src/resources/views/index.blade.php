@@ -15,17 +15,17 @@
                     <th class="column-title">お名前<span class="attention">※</span></th>
                     <td id="name" class="table-cell">
                         <div class="name-separate">
-                            <input class="input-area" type="text" name="last-name" placeholder="例）山田" value="{{ old('last-name') }}">
-                            <input class="input-area" type="text" name="first-name" placeholder="例）太郎" value="{{ old('first-name') }}">
+                            <input class="input-area" type="text" name="last_name" placeholder="例）山田" value="{{ old('last_name') }}">
+                            <input class="input-area" type="text" name="first_name" placeholder="例）太郎" value="{{ old('first_name') }}">
                         </div>
                         <div class="error-message name_error">
-                            <div class="last-name_error">
-                                @error('last-name')
+                            <div class="last_name_error">
+                                @error('last_name')
                                 {{$message}}
                                 @enderror
                             </div>
-                            <div class="first-name_error">
-                                @error('first-name')
+                            <div class="first_name_error">
+                                @error('first_name')
                                 {{$message}}
                                 @enderror
                             </div>
@@ -69,11 +69,11 @@
                     <th class="column-title">電話番号<span class="attention">※</span></th>
                     <td id="tel" class="table-cell">
                         <div id="tel-align">
-                            <input class="input-area tel-input" name="first-tel" value="{{old('firstTel')}}">
-                            <span class="tell-interface">-</span>
-                            <input class="input-area tel-input" name="second-tel" value="{{old('secondTel')}}">
-                            <span class="tell-interface">-</span>
-                            <input class="input-area tel-input" name="third-tel" value="{{old('thirdTel')}}">
+                            <input class="input-area tel-input" name="first-tel" value="{{old('first-tel')}}">
+                            <span class="tel-interface">-</span>
+                            <input class="input-area tel-input" name="second-tel" value="{{old('second-tel')}}">
+                            <span class="tel-interface">-</span>
+                            <input class="input-area tel-input" name="third-tel" value="{{old('third-tel')}}">
                         </div>
                         <div class="error-message">
                             @if($errors->has('first-tel') || $errors->has('second-tel') || $errors->has('third-tel') )

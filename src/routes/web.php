@@ -15,7 +15,7 @@ use App\Models\Contact;
 |
 */
 
-Route::get('/', [ContactController::class, 'index'])->name("form.write");
+Route::get('/', [ContactController::class, 'index'])->name("rewrite");
 
 Route::post('/confirm', [ContactController::class, 'confirm']);
 

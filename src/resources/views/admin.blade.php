@@ -79,7 +79,7 @@
                     </div>
                 </td>
                 <div class="hidden-area">
-                    <p class="tell_get{{$contact['id']}}">{{$contact['tell']}}</p>
+                    <p class="tel_get{{$contact['id']}}">{{$contact['tel']}}</p>
                     <p class="address_get{{$contact['id']}}">{{$contact['address']}}</p>
                     <p class="building_get{{$contact['id']}}">{{$contact['building']}}</p>
                     <p class="detail_get{{$contact['id']}}">{{$contact['detail']}}</p>
@@ -106,7 +106,7 @@
                 </tr>
                 <tr>
                     <th class="line-title">電話番号</th>
-                    <td class="tell-modal modal-cell"></td>
+                    <td class="tel-modal modal-cell"></td>
                 </tr>
                 <tr>
                     <th class="line-title">住所</th>

@@ -13,7 +13,9 @@
             <tr class="table-line">
                 <th class="column-title">お名前</th>
                 <td class="table-cell">
-                    <input class="read-input" name="fullname" type="text" value="{{ $contact['last-name'] }}{{ $contact['first-name'] }}" readonly>
+                    <input class="read-input" name="full_name" type="text" value="{{ $contact['last_name'] }}{{ $contact['first_name'] }}" readonly>
+                    <input type="hidden" name="last_name" value="{{ $contact['last_name'] }}" readonly>
+                    <input type="hidden" name="first_name" value="{{ $contact['first_name'] }}" readonly>
                 </td>
             </tr>
             <tr class="table-line">
@@ -31,7 +33,7 @@
             <tr class="table-line">
                 <th class="column-title">電話番号</th>
                 <td class="table-cell">
-                    <input class="read-input" name="tell" type="tel" value="{{ $contact['first-tel'] }}{{ $contact['second-tel'] }}{{ $contact['third-tel'] }}" readonly>
+                    <input class="read-input" name="tel" type="tel" value="{{$tel}}" readonly>
                 </td>
             </tr>
             <tr class="table-line">

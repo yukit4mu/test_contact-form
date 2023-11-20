@@ -15,7 +15,7 @@ class Contact extends Model
         'last_name',
         'gender',
         'email',
-        'tell',
+        'tel',
         'address',
         'building',
         'detail',
@@ -25,7 +25,7 @@ class Contact extends Model
         'category_id' => 'integer|min:1|max:5',
         'gender' => 'integer|min:1|max:3',
         'email' => 'email',
-        'tell' => 'tel',
+        'tel' => 'tel',
     );
 
     public function category()
@@ -33,4 +33,3 @@ class Contact extends Model
         return $this->belongsTo('App\Models\Category');
     }
 }
-

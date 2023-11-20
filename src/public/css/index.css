@@ -57,13 +57,13 @@ textarea::placeholder{
 }
 
 #name input,
-.last-name_error,
-.first-name_error{
+.last_name_error,
+.first_name_error{
     width:45%;
 } 
 
-.last-name_error,
-.first-name_error{
+.last_name_error,
+.first_name_error{
     color:red;
 }
 

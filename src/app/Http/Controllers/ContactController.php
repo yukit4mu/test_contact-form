@@ -15,42 +15,57 @@ class ContactController extends Controller
 
     public function confirm(ContactRequest $request)
     {
-        $contact = $request->only([
-            'last-name',
-            'first-name',
-            'gender',
-            'email',
-            'first-tel',
-            'second-tel',
-            'third-tel',
-            'address',
-            'building',
-            'category_id',
-            'detail'
-        ]);
-        return view('confirm', ['contact' => $contact]);
+        $contact = $request->all();
+
+        $firstTel = implode(",", $request->only(['first-tel']));
+        $secondTel = implode(",", $request->only(['second-tel']));
+        $thirdTel = implode(",", $request->only(['third-tel']));
+        $tel = $firstTel . $secondTel . $thirdTel;
+
+        return view('confirm', ['contact' => $contact, 'tel' => $tel]);
     }
 
     public function store(Request $request)
     {
         if ($request->get('action') === 'modify') {
-            return redirect()->route('form.write')->withInput();
+            return redirect()->route('rewrite')->withInput();
         }
-        $form = $request->only([
-            'last-name',
-            'first-name',
+
+        $contact = $request->only([
+            'category_id',
+            'first_name',
+            'last_name',
             'gender',
             'email',
-            'first-tel',
-            'second-tel',
-            'third-tel',
+            'tel',
             'address',
             'building',
-            'category_id',
-            'detail'
+            'detail',
         ]);
-        Contact::create($form);
+
+        $genderType = implode(",", $request->only(['gender']));
+        if ($genderType == "男性") {
+            $contact['gender'] = 1;
+        } elseif ($genderType == "女性") {
+            $contact['gender'] = 2;
+        } elseif ($genderType == "その他") {
+            $contact['gender'] = 3;
+        }
+
+        $categoryType = implode(",", $request->only(['category_id']));
+        if ($categoryType == "商品のお届けについて") {
+            $contact['category_id'] = 1;
+        } elseif ($categoryType == "商品の交換について") {
+            $contact['category_id'] = 2;
+        } elseif ($categoryType == "商品トラブル") {
+            $contact['category_id'] = 3;
+        } elseif ($categoryType == "ショップへのお問い合わせ") {
+            $contact['category_id'] = 4;
+        } elseif ($categoryType == "その他") {
+            $contact['category_id'] = 5;
+        }
+
+        Contact::create($contact);
         return view('thanks');
     }
-
 }

@@ -57,11 +57,10 @@
                 <button type="submit" class="export">エクスポート</button>
             </form>
             <div class="pagination-link">
-                {{$contact->appends(request()->query())->links()}}
+                {{$contacts->appends(request()->query())->links()}}
             </div>
         </div>
         <table class="contacts-database" cellspacing="0">
-            <!-- cellspacing="0"いる？ -->
             <tr>
                 <th class="column-name">お名前</th>
                 <th class="column-name">性別</th>

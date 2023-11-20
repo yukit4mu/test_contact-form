@@ -14,7 +14,7 @@ class ContactController extends Controller
         return view('index');
     }
 
-    public function confirm(ContactRequest $request) //ここから
+    public function confirm(ContactRequest $request)
     {
         $contact = $request->all();
 
@@ -73,22 +73,22 @@ class ContactController extends Controller
         Contact::create($contact);
         return view('thanks');
     }
-    //一旦、fortify見る
+
     public function admin()
     {
         $contacts = Contact::Paginate(10);
 
         for ($i = 0; $i < count($contacts); $i++) {
-            $contact_gender = $contacts[$i]['gender'];
-            if ($contact_gender == 1) {
+            $gender_type = $contacts[$i]['gender'];
+            if ($gender_type == 1) {
                 $contacts[$i]['gender'] = "男性";
-            } elseif ($contact_gender == 2) {
+            } elseif ($gender_type == 2) {
                 $contacts[$i]['gender'] = "女性";
-            } elseif ($contact_gender == 3) {
+            } elseif ($gender_type == 3) {
                 $contacts[$i]['gender'] = "その他";
             }
         }
-        return view('admin', ['contact' => $contacts]);
+        return view('admin', ['contacts' => $contacts]);
     }
 
     public function search(Request $request)
@@ -117,18 +117,18 @@ class ContactController extends Controller
         }
 
         for ($i = 0; $i < count($contacts); $i++) {
-            $contact_gender = $contacts[$i]["gender"];
+            $gender_type = $contacts[$i]["gender"];
             $contact_category = $contacts[$i]["category_id"];
-            if ($contact_gender == 1) {
-                $contacts[$i]["gender"] = "男性";
-            } elseif ($contact_gender == 2) {
+            if ($gender_type == 1) {
+                $contact[$i]["gender"] = "男性";
+            } elseif ($gender_type == 2) {
                 $contacts[$i]["gender"] = "女性";
-            } elseif ($contact_gender == 3) {
+            } elseif ($gender_type == 3) {
                 $contacts[$i]["gender"] = "その他";
             }
         }
 
-        $contacts = $query->Paginate(10);
+        $contact = $query->Paginate(10);
         return view('admin', ['contact' => $contacts]);
     }
 

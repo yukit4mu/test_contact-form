@@ -56,7 +56,7 @@
                 <button type="submit" class="export">エクスポート</button>
             </form>
             <div class="pagination-link">
-                {{$contacts->appends(request()->query())->links()}}
+                {{$contact->appends(request()->query())->links()}}
             </div>
         </div>
         <table class="contacts-database" cellspacing="0">

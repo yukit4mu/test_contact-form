@@ -84,6 +84,56 @@ class ContactController extends Controller
                 $contacts[$i]['gender'] = "その他";
             }
         }
-        return view('admin', compact('contacts'));
+        return view('admin', ['contact' => $contacts]);
     }
+
+    public function search(Request $request)
+    {
+        $query = Contact::query();
+        $contacts = $request->all();
+
+        //admin.bladeに入力された値をリクエストからアクセスして取得
+        $name_email_search = $request->name_email_search;
+        $gender_search = $request->gender_search;
+        $category_search = $request->category_search;
+        $date_search = $request->date_search;
+
+        //firstとlastで分ける限界が来た
+        if (!empty($name_email_search)) {
+            $query->where('fullname', 'like', '%' . $name_email_search . '%')->orWhere('email', 'like', '%' . $name_email_search . '%');
+        }
+        if (!empty($gender_search)) {
+            $query->where('gender', $gender_search);
+        }
+        if (!empty($category_search)) {
+            $query->where('category_id', $category_search);
+        }
+        if (!empty($date_search)) {
+            $query->where('created_at', '%' . $date_search . '%');
+        }
+
+        for ($i = 0; $i < count($contacts); $i++) {
+            $contact_gender = $contacts[$i]["gender"];
+            $contact_category = $contacts[$i]["category_id"];
+            if ($contact_gender == 1) {
+                $contacts[$i]["gender"] = "男性";
+            } elseif ($contact_gender == 2) {
+                $contacts[$i]["gender"] = "女性";
+            } elseif ($contact_gender == 3) {
+                $contacts[$i]["gender"] = "その他";
+            }
+        }
+
+        $contacts = $query->Paginate(10);
+        return view('admin',['contact'=>$contacts]);
+    }
+
+
+    public function delete(Request $request)
+    {
+        $contact = Contact::findOrFail($request->id);
+        $contact->delete();
+        return redirect('/admin');
+    }
+
 }

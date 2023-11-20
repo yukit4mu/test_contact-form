@@ -14,16 +14,20 @@ class ContactController extends Controller
         return view('index');
     }
 
-    public function confirm(ContactRequest $request)
+    public function confirm(ContactRequest $request) //ここから
     {
         $contact = $request->all();
 
-        $firstTel = implode(",", $request->only(['first-tel']));
-        $secondTel = implode(",", $request->only(['second-tel']));
-        $thirdTel = implode(",", $request->only(['third-tel']));
-        $tel = $firstTel . $secondTel . $thirdTel;
+        $frontTel = implode(",", $request->only(['front-tel']));
+        $middleTel = implode(",", $request->only(['middle-tel']));
+        $backTel = implode(",", $request->only(['back-tel']));
+        $entireTel = $frontTel . $middleTel . $backTel;
 
-        return view('confirm', ['contact' => $contact, 'tel' => $tel]);
+        $lastName = implode(",", $request->only(['last_name']));
+        $firstName = implode(",", $request->only(['first_name']));
+        $fullName = $lastName . " " . $firstName;
+
+        return view('confirm', ['contact' => $contact, 'entireTel' => $entireTel, 'fullName' => $fullName]);
     }
 
     public function store(Request $request)
@@ -44,7 +48,7 @@ class ContactController extends Controller
             'detail',
         ]);
 
-        $genderType = implode(",", $request->only(['gender']));
+        $genderType = implode(",", $request->only('gender'));
         if ($genderType == "男性") {
             $contact['gender'] = 1;
         } elseif ($genderType == "女性") {
@@ -125,7 +129,7 @@ class ContactController extends Controller
         }
 
         $contacts = $query->Paginate(10);
-        return view('admin',['contact'=>$contacts]);
+        return view('admin', ['contact' => $contacts]);
     }
 
 
@@ -135,5 +139,4 @@ class ContactController extends Controller
         $contact->delete();
         return redirect('/admin');
     }
-
 }

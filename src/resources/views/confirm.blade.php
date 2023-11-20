@@ -13,7 +13,7 @@
             <tr class="table-line">
                 <th class="column-title">お名前</th>
                 <td class="table-cell">
-                    <input class="read-input" name="full_name" type="text" value="{{ $contact['last_name'] }}{{ $contact['first_name'] }}" readonly>
+                    <input class="read-input" name="full-name" type="text" value="{{ $fullName }}" readonly>
                     <input type="hidden" name="last_name" value="{{ $contact['last_name'] }}" readonly>
                     <input type="hidden" name="first_name" value="{{ $contact['first_name'] }}" readonly>
                 </td>
@@ -33,7 +33,7 @@
             <tr class="table-line">
                 <th class="column-title">電話番号</th>
                 <td class="table-cell">
-                    <input class="read-input" name="tel" type="tel" value="{{$tel}}" readonly>
+                    <input class="read-input" name="tel" type="tel" value="{{ $entireTel }}" readonly>
                 </td>
             </tr>
             <tr class="table-line">
@@ -63,8 +63,6 @@
         </table>
         <div class="buttons-area">
             <button type="submit" name="action" value="post">送信</button>
-        </div>
-        <div class="fix-area">
             <button type="submit" name="action" value="modify">修正</button>
         </div>
     </form>

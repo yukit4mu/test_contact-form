@@ -69,14 +69,14 @@
                     <th class="column-title">電話番号<span class="attention">※</span></th>
                     <td id="tel" class="table-cell">
                         <div id="tel-align">
-                            <input class="input-area tel-input" name="first-tel" value="{{old('first-tel')}}">
+                            <input class="input-area tel-input" name="front-tel" value="{{old('front-tel')}}">
                             <span class="tel-interface">-</span>
-                            <input class="input-area tel-input" name="second-tel" value="{{old('second-tel')}}">
+                            <input class="input-area tel-input" name="middle-tel" value="{{old('middle-tel')}}">
                             <span class="tel-interface">-</span>
-                            <input class="input-area tel-input" name="third-tel" value="{{old('third-tel')}}">
+                            <input class="input-area tel-input" name="back-tel" value="{{old('back-tel')}}">
                         </div>
                         <div class="error-message">
-                            @if($errors->has('first-tel') || $errors->has('second-tel') || $errors->has('third-tel') )
+                            @if($errors->has('front-tel') || $errors->has('middle-tel') || $errors->has('back-tel') )
                             電話番号を入力してください
                             @endif
                         </div>

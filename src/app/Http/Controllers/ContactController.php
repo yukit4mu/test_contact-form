@@ -96,15 +96,17 @@ class ContactController extends Controller
         $query = Contact::query();
         $contacts = $request->all();
 
-        //admin.bladeに入力された値をリクエストからアクセスして取得
         $name_email_filter = $request->name_email_filter;
         $gender_dropdown = $request->gender_dropdown;
         $category_dropdown = $request->category_dropdown;
         $date_calendar = $request->date_calendar;
 
-        //firstとlastで分ける限界が来た
         if (!empty($name_email_filter)) {
-            $query->where('full-name', 'like', '%' . $name_email_filter . '%')->orWhere('email', 'like', '%' . $name_email_filter . '%');
+            $query->where(function ($query) use ($name_email_filter) {
+                $query->where('first_name', 'like', '%' . $name_email_filter . '%')
+                    ->orWhere('last_name', 'like', '%' . $name_email_filter . '%');
+            })
+            ->orWhere('email', 'like', '%' . $name_email_filter . '%');
         }
         if (!empty($gender_dropdown)) {
             $query->where('gender', $gender_dropdown);
@@ -116,20 +118,25 @@ class ContactController extends Controller
             $query->where('created_at', '%' . $date_calendar . '%');
         }
 
-        for ($i = 0; $i < count($contacts); $i++) {
-            $gender_type = $contacts[$i]["gender"];
-            $contact_category = $contacts[$i]["category_id"];
-            if ($gender_type == 1) {
-                $contact[$i]["gender"] = "男性";
-            } elseif ($gender_type == 2) {
-                $contacts[$i]["gender"] = "女性";
-            } elseif ($gender_type == 3) {
-                $contacts[$i]["gender"] = "その他";
+        if (!empty($contacts)) {
+            for ($i = 0; $i < count($contacts); $i++) {
+                if (isset($contacts[$i]['gender'])) {
+                    $gender_type = $contacts[$i]['gender'];
+
+                    if ($gender_type == 1) {
+                        $contacts[$i]['gender'] = "男性";
+                    } elseif ($gender_type == 2) {
+                        $contacts[$i]['gender'] = "女性";
+                    } elseif ($gender_type == 3) {
+                        $contacts[$i]['gender'] = "その他";
+                    }
+                }
             }
         }
 
-        $contact = $query->Paginate(10);
-        return view('admin', ['contact' => $contacts]);
+
+        $contacts = $query->Paginate(10);
+        return view('admin', ['contacts' => $contacts]);
     }
 
 

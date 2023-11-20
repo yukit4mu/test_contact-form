@@ -24,7 +24,6 @@
             <div class="name-email">
                 <input name="name_email_filter" type="text" class="name_email_filter" placeholder="名前やメールアドレスを入力してください">
                 <input type="submit" value="🔍" class="search-button">
-                <!-- あとでメガネ消して検証 -->
             </div>
             <div class="gender">
                 <select name="gender_dropdown" class="gender_dropdown">

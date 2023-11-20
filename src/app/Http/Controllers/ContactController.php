@@ -73,7 +73,7 @@ class ContactController extends Controller
         Contact::create($contact);
         return view('thanks');
     }
-//一旦、fortify見る
+    //一旦、fortify見る
     public function admin()
     {
         $contacts = Contact::Paginate(10);
@@ -97,23 +97,23 @@ class ContactController extends Controller
         $contacts = $request->all();
 
         //admin.bladeに入力された値をリクエストからアクセスして取得
-        $name_email_search = $request->name_email_search;
-        $gender_search = $request->gender_search;
-        $category_search = $request->category_search;
-        $date_search = $request->date_search;
+        $name_email_filter = $request->name_email_filter;
+        $gender_dropdown = $request->gender_dropdown;
+        $category_dropdown = $request->category_dropdown;
+        $date_calendar = $request->date_calendar;
 
         //firstとlastで分ける限界が来た
-        if (!empty($name_email_search)) {
-            $query->where('fullname', 'like', '%' . $name_email_search . '%')->orWhere('email', 'like', '%' . $name_email_search . '%');
+        if (!empty($name_email_filter)) {
+            $query->where('full-name', 'like', '%' . $name_email_filter . '%')->orWhere('email', 'like', '%' . $name_email_filter . '%');
         }
-        if (!empty($gender_search)) {
-            $query->where('gender', $gender_search);
+        if (!empty($gender_dropdown)) {
+            $query->where('gender', $gender_dropdown);
         }
-        if (!empty($category_search)) {
-            $query->where('category_id', $category_search);
+        if (!empty($category_dropdown)) {
+            $query->where('category_id', $category_dropdown);
         }
-        if (!empty($date_search)) {
-            $query->where('created_at', '%' . $date_search . '%');
+        if (!empty($date_calendar)) {
+            $query->where('created_at', '%' . $date_calendar . '%');
         }
 
         for ($i = 0; $i < count($contacts); $i++) {

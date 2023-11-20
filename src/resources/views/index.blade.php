@@ -12,7 +12,7 @@
         <div class="form-area">
             <table class="index-table" cellpadding="10">
                 <tr class="table-line">
-                    <th class="column-title">お名前<span class="attention">※</span></th>
+                    <th class="column-name">お名前<span class="attention">※</span></th>
                     <td id="name" class="table-cell">
                         <div class="name-separate">
                             <input class="input-area" type="text" name="last_name" placeholder="例）山田" value="{{ old('last_name') }}">
@@ -33,7 +33,7 @@
                     </td>
                 </tr>
                 <tr class="table-line">
-                    <th class="column-title">性別<span class="attention">※</span></th>
+                    <th class="column-name">性別<span class="attention">※</span></th>
                     <td id="gender" class="table-cell">
                         <div class="radio-item">
                             <input class="input-area gender-radio" type="radio" name="gender" value="男性" checked>
@@ -55,7 +55,7 @@
                     </td>
                 </tr>
                 <tr class="table-line">
-                    <th class="column-title">メールアドレス<span class="attention">※</span></th>
+                    <th class="column-name">メールアドレス<span class="attention">※</span></th>
                     <td id="email" class="table-cell">
                         <input class="input-area email-input" type="email" name="email" placeholder="test@example.com" value="{{old('email')}}">
                         <div class="error-message">
@@ -66,7 +66,7 @@
                     </td>
                 </tr>
                 <tr class="table-line">
-                    <th class="column-title">電話番号<span class="attention">※</span></th>
+                    <th class="column-name">電話番号<span class="attention">※</span></th>
                     <td id="tel" class="table-cell">
                         <div id="tel-align">
                             <input class="input-area tel-input" name="front-tel" value="{{old('front-tel')}}">
@@ -83,7 +83,7 @@
                     </td>
                 </tr>
                 <tr class="table-line">
-                    <th class="column-title">住所<span class="attention">※</span></th>
+                    <th class="column-name">住所<span class="attention">※</span></th>
                     <td id="address" class="table-cell">
                         <input class="input-area address-input" type="text" name="address" placeholder="例）東京都渋谷区千駄ヶ谷1-2-3" value="{{old('address')}}">
                         <div class="error-message">
@@ -94,13 +94,13 @@
                     </td>
                 </tr>
                 <tr class="table-line">
-                    <th class="column-title">建物名</th>
+                    <th class="column-name">建物名</th>
                     <td id="building" class="table-cell">
                         <input class="input-area building-input" type="text" name="building" placeholder="例）千駄ヶ谷マンション101" value="{{old('building')}}">
                     </td>
                 </tr>
                 <tr class="table-line">
-                    <th class="column-title">お問い合わせの種類<span class="attention">※</span></th>
+                    <th class="column-name">お問い合わせの種類<span class="attention">※</span></th>
                     <td class="table-cell">
                         <div id="category">
                             <select class="input-area category-select" name="category_id" value="{{old('category_id')}}">
@@ -120,7 +120,7 @@
                     </td>
                 </tr>
                 <tr class="table-line">
-                    <th id="align-up" class="column-title">お問い合わせ内容<span class="attention">※</span></th>
+                    <th id="align-up" class="column-name">お問い合わせ内容<span class="attention">※</span></th>
                     <td id="detail" class="table-cell">
                         <textarea class="input-area detail-text" name="detail" placeholder="お問い合わせ内容をご記載ください">{{old('detail')}}</textarea>
                         <div class="error-message">

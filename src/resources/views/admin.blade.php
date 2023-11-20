@@ -22,11 +22,12 @@
         @csrf
         <div class="search-form">
             <div class="name-email">
-                <input name="name_email_search" type="text" class="name_email_search" placeholder="名前やメールアドレスを入力してください">
+                <input name="name_email_filter" type="text" class="name_email_filter" placeholder="名前やメールアドレスを入力してください">
                 <input type="submit" value="🔍" class="search-button">
+                <!-- あとでメガネ消して検証 -->
             </div>
             <div class="gender">
-                <select name="gender_search" class="gender_search">
+                <select name="gender_dropdown" class="gender_dropdown">
                     <option disabled>性別</option>
                     <option value="0">全て</option>
                     <option value="1">男性</option>
@@ -35,7 +36,7 @@
                 </select>
             </div>
             <div class="category_id">
-                <select name="category_search" class="category_search">
+                <select name="category_dropdown" class="category_dropdown">
                     <option disabled selected>選択してください</option>
                     <option value="1">商品のお届けについて</option>
                     <option value="2">商品の交換について</option>
@@ -45,7 +46,7 @@
                 </select>
             </div>
             <div class="date">
-                <input type="date" name="date_search" class="date_search">
+                <input type="date" name="date_calendar" class="date_calendar">
             </div>
         </div>
     </form>
@@ -60,12 +61,13 @@
             </div>
         </div>
         <table class="contacts-database" cellspacing="0">
+            <!-- cellspacing="0"いる？ -->
             <tr>
-                <th class="column-title">お名前</th>
-                <th class="column-title">性別</th>
-                <th class="column-title">メールアドレス</th>
-                <th class="column-title">お問い合わせの種類</th>
-                <th class="column-title"></th>
+                <th class="column-name">お名前</th>
+                <th class="column-name">性別</th>
+                <th class="column-name">メールアドレス</th>
+                <th class="column-name">お問い合わせの種類</th>
+                <th class="column-name"></th>
             </tr>
             @foreach($contacts as $contact)
             <tr>
@@ -94,7 +96,7 @@
             <table class="modal-table">
                 <tr>
                     <th class="line-title">お名前</th>
-                    <td class="fullname-modal modal-cell"></td>
+                    <td class="full-name-modal modal-cell"></td>
                 </tr>
                 <tr>
                     <th class="line-title">性別</th>

@@ -51,7 +51,7 @@
     </form>
     <div class="contacts-table">
         <div class="above-table">
-            <form action="/admin/export" method="get">
+            <form action="/admin/csv-download" method="get">
                 @csrf
                 <button type="submit" class="export">エクスポート</button>
             </form>

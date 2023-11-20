@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Models\Category;
+use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
@@ -67,5 +68,22 @@ class ContactController extends Controller
 
         Contact::create($contact);
         return view('thanks');
+    }
+
+    public function admin()
+    {
+        $contacts = Contact::Paginate(10);
+
+        for ($i = 0; $i < count($contacts); $i++) {
+            $contact_gender = $contacts[$i]['gender'];
+            if ($contact_gender == 1) {
+                $contacts[$i]['gender'] = "男性";
+            } elseif ($contact_gender == 2) {
+                $contacts[$i]['gender'] = "女性";
+            } elseif ($contact_gender == 3) {
+                $contacts[$i]['gender'] = "その他";
+            }
+        }
+        return view('admin', compact('contacts'));
     }
 }

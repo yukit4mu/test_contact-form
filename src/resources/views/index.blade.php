@@ -94,7 +94,7 @@
                     </td>
                 </tr>
                 <tr class="table-line">
-                    <th class="column-title">建物名<span class="attention">※</span></th>
+                    <th class="column-title">建物名</th>
                     <td id="building" class="table-cell">
                         <input class="input-area building-input" type="text" name="building" placeholder="例）千駄ヶ谷マンション101" value="{{old('building')}}">
                     </td>

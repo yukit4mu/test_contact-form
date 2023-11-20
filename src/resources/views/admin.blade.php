@@ -69,7 +69,7 @@
             </tr>
             @foreach($contacts as $contact)
             <tr>
-                <td class="fullname_get{{$contact['id']}} fullname_get">{{$contact['fullname']}}</td>
+                <td class="fullname_get{{$contact['id']}} fullname_get">{{$contact['last_name']}}{{$contact['first_name']}}</td>
                 <td class="gender_get{{$contact['id']}} gender_get">{{$contact['gender']}}</td>
                 <td class="email_get{{$contact['id']}} email_get">{{$contact['email']}}</td>
                 <td class="category_get{{$contact['id']}} category_get">{{$contact->category->getCategory()}}</td>

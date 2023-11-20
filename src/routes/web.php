@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AuthController;
 use App\Models\Contact;
+use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +23,17 @@ Route::get('/', [ContactController::class, 'index'])->name("rewrite");
 Route::post('/confirm', [ContactController::class, 'confirm']);
 
 Route::post('/thanks', [ContactController::class, 'store']);
+
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', [ContactController::class, 'admin']);
+});
+
+Route::get('/admin/search', [ContactController::class, 'search']);
+
+Route::get('/register', [AuthController::class, 'registerView']);
+
+Route::get('/login', [AuthController::class, 'loginView']);
+
+Route::post('/admin/delete', [ContactController::class, 'delete']);
+
+Route::get('/admin/export', [DownloadController::class, 'Download']);

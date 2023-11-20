@@ -1,14 +1,14 @@
 *{
-    color:#deb887;
+    color:#867262;
 }
 
 input::placeholder,
 textarea::placeholder{
-    color:#deb887;
+    color:#867262;
 }
 
 :-ms-input-placeholder {
-    color: #deb887;
+    color: #867262;
   }
 
 .page-title{
@@ -118,7 +118,7 @@ textarea::placeholder{
     height: 0;
     border-style: solid;
     border-width: 10px 10px 0 10px;
-    border-color: orange transparent transparent transparent;
+    border-color:#867262;
     position: absolute;
     top: 50%;
     right: 52%;
@@ -154,7 +154,7 @@ textarea::placeholder{
     border:none;
     padding:10px 30px;
     color:#fff;
-    background:#8b4513;
+    background:#BAA899;
     height:unset;
     margin:0 auto;
     margin-top:40px;

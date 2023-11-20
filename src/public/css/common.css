@@ -9,13 +9,20 @@
     padding:10px 40px;
     text-align:center;
     position:relative;
-    border-bottom:1px solid #deb887;
+    border-bottom:1px solid #867262;
     background:#fff;
 }
 
 .header-title{
-    font-size:25px;
-    color:#deb887;
+    display: flex;
+    justify-content: center;
+    color: #8B7969;
+    text-align: center;
+    font-family: Inika;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .main-area{

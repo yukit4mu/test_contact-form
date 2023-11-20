@@ -9,12 +9,12 @@
 </head>
 
 <body>
-    <div class="back-title">
-        <p class="back-title">Thank you</p>
+    <div class="back-thanks">
+        <p class="back-thanks">Thank you</p>
     </div>
-    <div class="front-area">
+    <div class="front">
         <p class="thanks">お問い合わせありがとうございました</p>
-        <a class="goBack" href="/">HOME</a>
+        <a class="back" href="/">HOME</a>
     </div>
 </body>
 

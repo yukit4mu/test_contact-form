@@ -1,5 +1,5 @@
 *{
-    color:#deb887;
+    color:#867262;
     font-size:20px;
 }
 
@@ -19,12 +19,16 @@ h1{
 }
 
 .toRegister{
-    display:inline-block;
-    padding:10px 20px;
+    display: flex;
+    width: 98px;
+    height: 32px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
     background:#f5f5f5;
-    color:#deb887;
+    color:#867262;
     text-decoration:none;
-    border:solid 1px #deb887;
+    border:solid 1px #867262;
 }
 
 .login-form{
@@ -61,7 +65,7 @@ h1{
     border:none;
     padding:10px 30px;
     color:#fff;
-    background:#8b4513;
+    background:#BAA899;
     height:unset;
 }
 

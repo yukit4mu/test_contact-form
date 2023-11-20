@@ -2,21 +2,21 @@
     font-size:25px;
     font-weight:bold;
     margin-bottom:60px;
-    color:#d2b48c;
+    color:#867262;
 }
 
-.goBack{
+.back{
     outline:none;
     border:none;
     padding:10px 30px;
     color:#fff;
-    background:#8b4513;
+    background:#867262;
     height:unset;
     margin-right:30px;
 }
 
-.back-title,
-.front-area{
+.back-thanks,
+.front{
     text-align:center;
     position:absolute;
     top:50%;
@@ -24,13 +24,15 @@
     transform:translate(-50%,-50%);
 }
 
-.back-title{
+.back-thanks{
     width:100%;
-    z-index:-10;
+    z-index:-20;
 }
 
-.back-title{
-    font-size:200px;
+.back-thanks{
+    font-size:180px;
+    font-weight: bold;
     letter-spacing:40px;
     color:#f5f5f5;
+    margin-top: -20px;
 }

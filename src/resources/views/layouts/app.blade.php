@@ -12,6 +12,7 @@
 <body class="body-area">
     <header class="header-index">
         <p class="header-title">FashionablyLate</p>
+        @yield('header')
     </header>
 
     <main class="main-area">

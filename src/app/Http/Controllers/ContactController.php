@@ -73,7 +73,7 @@ class ContactController extends Controller
         Contact::create($contact);
         return view('thanks');
     }
-
+//一旦、fortify見る
     public function admin()
     {
         $contacts = Contact::Paginate(10);

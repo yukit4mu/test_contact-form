@@ -23,10 +23,6 @@
 ```mermaid
 erDiagram
 
-contacts(親テーブル)
-categories(子テーブル)
-users(fortify認証用)
-
   contacts ||--o{categories : "relation"
 
   contacts {

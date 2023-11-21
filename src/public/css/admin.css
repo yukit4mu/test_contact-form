@@ -131,11 +131,12 @@
 span[aria-current="page"],
 span[aria-label="&laquo;"]{
     text-decoration:none;
-    display:inline-block;
-    height:15px;
-    width:15px;
-    padding:3px;
+    display: inline-block;
+    height:19px;
+    width:19px;
+    padding: 3px;
     border:solid 1px #BAA899;
+    text-align: center;
 }
 
 svg{

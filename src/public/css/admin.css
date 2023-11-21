@@ -98,12 +98,14 @@
     background:#82756A;
     color:#fff;
     padding:10px 30px;
+    border-bottom: solid 1px #c0c0c0;
 }
 
 .name_get,
 .gender_get,
 .email_get,
-.category_get{
+.category_get,
+.created_get{
     padding:10px 30px;
     border-bottom:solid 1px #c0c0c0;
 }

@@ -26,7 +26,7 @@
             </div>
             <div class="gender">
                 <select name="gender_dropdown" class="gender_dropdown">
-                    <option disabled>性別</option>
+                    <option selected disabled>性別</option>
                     <option value="0">全て</option>
                     <option value="1">男性</option>
                     <option value="2">女性</option>

@@ -6,6 +6,7 @@ use App\Models\Contact;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
+use Normalizer;
 
 class ContactController extends Controller
 {
@@ -102,11 +103,12 @@ class ContactController extends Controller
         $date_calendar = $request->date_calendar;
 
         if (!empty($name_email_filter)) {
-            $query->where(function ($query) use ($name_email_filter) {
-                $query->where('first_name', 'like', '%' . $name_email_filter . '%')
-                    ->orWhere('last_name', 'like', '%' . $name_email_filter . '%');
+            $normalized_filter = Normalizer::normalize($name_email_filter, Normalizer::FORM_C);
+
+            $query->where(function ($query) use ($normalized_filter) {
+                $query->where(Contact::raw("CONCAT(last_name,first_name)"), 'like', '%' . $normalized_filter . '%');
             })
-            ->orWhere('email', 'like', '%' . $name_email_filter . '%');
+            ->orWhere('email', 'like', '%' . $normalized_filter . '%');
         }
         if (!empty($gender_dropdown)) {
             $query->where('gender', $gender_dropdown);

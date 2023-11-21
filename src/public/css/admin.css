@@ -31,7 +31,6 @@
 .name-email{
     width:30%;
     display:flex;
-    border: 1px solid #c0c0c0;
 }
 
 .name_email_filter{
@@ -161,6 +160,7 @@ span[aria-current="page"] span{
     outline:none;
     border:none;
     background:transparent;
+    border: solid 1px #BAA899;
 }
 
 .detail_get{

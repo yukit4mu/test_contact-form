@@ -6,15 +6,17 @@
 }
 
 .header-index{
+    display: flex;
+    justify-content:space-between;
     padding:10px 40px;
     text-align:center;
+    align-items: center;
     position:relative;
     border-bottom:1px solid #867262;
     background:#fff;
 }
 
 .header-title{
-    display: flex;
     justify-content: center;
     color: #8B7969;
     text-align: center;
@@ -23,6 +25,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin: 0;
 }
 
 .main-area{

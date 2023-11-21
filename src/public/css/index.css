@@ -9,7 +9,7 @@ textarea::placeholder{
 
 :-ms-input-placeholder {
     color: #867262;
-  }
+}
 
 .page-title{
     display:block;
@@ -60,7 +60,7 @@ textarea::placeholder{
 .last_name_error,
 .first_name_error{
     width:45%;
-} 
+}
 
 .last_name_error,
 .first_name_error{

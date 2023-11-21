@@ -34,16 +34,16 @@ h1 {
     background: #fff;
 }
 
-.register-item {
+.register-info {
     width: 100%;
 }
 
-.register-item p {
+.register-info p {
     font-size: 20px;
     font-weight: bold;
 }
 
-.register-item input {
+.register-info input {
     width: 95%;
     padding: 15px 25px;
     outline: none;

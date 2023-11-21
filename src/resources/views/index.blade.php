@@ -6,7 +6,7 @@
 
 @section('content')
 <h1 class="page-title">Contact</h1>
-<div class="contact-area">
+<div class="input-contact">
     <form action="/confirm" method="post">
         @csrf
         <div class="form-area">
@@ -70,9 +70,9 @@
                     <td id="tel" class="table-cell">
                         <div id="tel-align">
                             <input class="input-area tel-input" name="front-tel" value="{{old('front-tel')}}">
-                            <span class="tel-interface">-</span>
+                            <span class="tel-bou">-</span>
                             <input class="input-area tel-input" name="middle-tel" value="{{old('middle-tel')}}">
-                            <span class="tel-interface">-</span>
+                            <span class="tel-bou">-</span>
                             <input class="input-area tel-input" name="back-tel" value="{{old('back-tel')}}">
                         </div>
                         <div class="error-message">

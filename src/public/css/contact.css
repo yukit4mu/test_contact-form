@@ -17,7 +17,7 @@ textarea::placeholder {
     font-size: 30px;
 }
 
-.contact-area {
+.input-contact {
     width: 80%;
     margin: 0 auto;
 }
@@ -97,7 +97,7 @@ textarea::placeholder {
     text-align: center;
 }
 
-.tel-interface {
+.tel-bou {
     width: 4%;
     text-align: center;
 }

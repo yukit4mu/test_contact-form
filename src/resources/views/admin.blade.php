@@ -54,7 +54,7 @@
                 @csrf
                 <button type="submit" class="export">エクスポート</button>
             </form>
-            <div class="pagination-link">
+            <div class="pagination">
                 {{$contacts->appends(request()->query())->links()}}
             </div>
         </div>
@@ -68,16 +68,16 @@
             </tr>
             @foreach($contacts as $contact)
             <tr>
-                <td class="fullname_get{{$contact['id']}} fullname_get">{{$contact['last_name']}}{{$contact['first_name']}}</td>
+                <td class="name_get{{$contact['id']}} name_get">{{$contact['last_name']}}{{$contact['first_name']}}</td>
                 <td class="gender_get{{$contact['id']}} gender_get">{{$contact['gender']}}</td>
                 <td class="email_get{{$contact['id']}} email_get">{{$contact['email']}}</td>
                 <td class="category_get{{$contact['id']}} category_get">{{$contact->category->getCategory()}}</td>
                 <td class="detail_get">
-                    <div class="show-detail" id="{{$contact['id']}}">
+                    <div class="detail-view" id="{{$contact['id']}}">
                         詳細
                     </div>
                 </td>
-                <div class="hidden-area">
+                <div class="hidden-column">
                     <p class="tel_get{{$contact['id']}}">{{$contact['tel']}}</p>
                     <p class="address_get{{$contact['id']}}">{{$contact['address']}}</p>
                     <p class="building_get{{$contact['id']}}">{{$contact['building']}}</p>
@@ -86,45 +86,46 @@
             </tr>
             @endforeach
         </table>
+        <!-- 以下モーダル -->
         <div class="modal">
             <div class="close-button">
                 ×
             </div>
             <table class="modal-table">
                 <tr>
-                    <th class="line-title">お名前</th>
+                    <th class="modal-title">お名前</th>
                     <td class="full-name-modal modal-cell"></td>
                 </tr>
                 <tr>
-                    <th class="line-title">性別</th>
+                    <th class="modal-title">性別</th>
                     <td class="gender-modal modal-cell"></td>
                 </tr>
                 <tr>
-                    <th class="line-title">メールアドレス</th>
+                    <th class="modal-title">メールアドレス</th>
                     <td class="email-modal modal-cell"></td>
                 </tr>
                 <tr>
-                    <th class="line-title">電話番号</th>
+                    <th class="modal-title">電話番号</th>
                     <td class="tel-modal modal-cell"></td>
                 </tr>
                 <tr>
-                    <th class="line-title">住所</th>
+                    <th class="modal-title">住所</th>
                     <td class="address-modal modal-cell"></td>
                 </tr>
                 <tr>
-                    <th class="line-title">建物名</th>
+                    <th class="modal-title">建物名</th>
                     <td class="building-modal modal-cell"></td>
                 </tr>
                 <tr>
-                    <th class="line-title">お問い合わせの種類</th>
+                    <th class="modal-title">お問い合わせの種類</th>
                     <td class="category-modal modal-cell"></td>
                 </tr>
                 <tr>
-                    <th class="line-title detail-title">お問い合わせ内容</th>
+                    <th class="modal-title detail-title">お問い合わせ内容</th>
                     <td class="detail-modal modal-cell"><textarea class="detail-text-modal"></textarea></td>
                 </tr>
             </table>
-            <div class="delete-area">
+            <div class="delete">
                 <form action="/admin/delete" method="post">
                     @csrf
                     <input name="id" type="hidden" value="" class="delete-id">

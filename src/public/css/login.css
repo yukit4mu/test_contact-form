@@ -34,16 +34,16 @@ h1 {
     background: #fff;
 }
 
-.login-item {
+.login-info {
     width: 100%;
 }
 
-.login-item p {
+.login-info p {
     font-size: 20px;
     font-weight: bold;
 }
 
-.login-item input {
+.login-info input {
     width: 95%;
     padding: 15px 25px;
     outline: none;

@@ -61,7 +61,7 @@
                 </td>
             </tr>
         </table>
-        <div class="buttons-area">
+        <div class="buttons">
             <button class="toThanks" type="submit" name="action" value="post">送信</button>
             <button class="toFix" type="submit" name="action" value="modify">修正</button>
         </div>

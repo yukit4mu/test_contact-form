@@ -7,20 +7,24 @@
 ### Laravel環境構築
 - docker-compose exec php bash
 - composer install
-- "cp .env.example .env"コマンドで.envファイルを作成し、環境変数を適宜変更
+- cp .env.example .env , 環境変数を適宜変更
+- php artisan key:generate
+- php artisan migrate
+- php artisan db:seed
 
 ## 使用技術(実行環境)
 - PHP 8.2.11
 - Laravel 8.83.8
+- jquery 3.7.1.min.js
 - MySQL 8.0.26
 - nginx 1.21.1
 
 ## ER図
 ```mermaid
 erDiagram
-  contacts ||--o{categories : ""
-  categories ||--o{users: ""
-  users ||--o{contacts: ""
+  contacts ||--o{categories : "親テーブル"
+  categories ||--o{users: "子テーブル"
+  users ||--o{contacts: "fortify認証用"
 
   contacts {
     bigint id PK
@@ -54,5 +58,8 @@ erDiagram
   }
 ```
 ## URL
-・開発環境：http://localhost/  
+・開発環境
+  - お問い合わせ画面：http://localhost/  
+  - ユーザー登録: http://localhost/register  
+  - 管理画面: http://localhost/admin  
 ・phpMyAdmin：http://localhost:8080/

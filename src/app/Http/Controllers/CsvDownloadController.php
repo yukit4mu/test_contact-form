@@ -7,6 +7,7 @@ use App\Models\Contact;
 use App\Models\Category;
 use App\Http\Requests\ContactRequest;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class CsvDownloadController extends Controller
@@ -14,33 +15,40 @@ class CsvDownloadController extends Controller
     public function downloadCsv()
     {
         $contacts = Contact::all();
-        $csvHeader =[
+        $csvHeader = [
+            'id',
             'category_id',
-            'first_name',
             'last_name',
+            'first_name',
             'gender',
             'email',
             'tel',
+            'detail',
             'address',
             'building',
-            'detail',
+            'created_at',
+            'updated_at',
         ];
-        $csvData = $contacts->toArray();
 
-        $response = new StreamedResponse(function () use ($csvHeader, $csvData) {
+        $response = new StreamedResponse(function () use ($csvHeader, $contacts) {
             $handle = fopen('php://output', 'w');
+
             fputcsv($handle, $csvHeader);
 
-            foreach ($csvData as $row) {
+
+            foreach ($contacts as $contact) {
+
+                $row = array_map('utf8_encode', $contact->toArray());
                 fputcsv($handle, $row);
             }
 
             fclose($handle);
-        }, 200, [
-            'Content-Type' => 'text/csv',
+        }, Response::HTTP_OK, [
+            'Content-Type' => 'text/csv; charset=UTF-8',
             'Content-Disposition' => 'attachment; filename="contacts.csv"',
         ]);
 
         return $response;
     }
 }
+

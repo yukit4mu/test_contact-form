@@ -7,6 +7,8 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use Normalizer;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Response;
 
 class ContactController extends Controller
 {
@@ -144,11 +146,4 @@ class ContactController extends Controller
         return view('admin', ['contacts' => $contacts]);
     }
 
-
-    public function delete(Request $request)
-    {
-        $contact = Contact::findOrFail($request->id);
-        $contact->delete();
-        return redirect('/admin');
-    }
 }

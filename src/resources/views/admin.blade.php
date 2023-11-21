@@ -35,7 +35,7 @@
             </div>
             <div class="category_id">
                 <select name="category_dropdown" class="category_dropdown">
-                    <option disabled selected>選択してください</option>
+                    <option disabled selected>お問い合わせ種類</option>
                     <option value="1">商品のお届けについて</option>
                     <option value="2">商品の交換について</option>
                     <option value="3">商品トラブル</option>

@@ -1,5 +1,5 @@
 *{
-    color:#867262;
+    color:#BAA899;
     font-size:20px;
 }
 
@@ -36,7 +36,7 @@
 .column-name{
     text-align:left;
     width:40%;
-    background:#867262;
+    background:#BAA899;
     color:#fff;
     border:solid 1px #c0c0c0;
     padding-left:50px;
@@ -64,14 +64,14 @@
 
 .toThanks{
     color:#fff;
-    background:#BAA899;
+    background:#82756A;
     margin:40px 0;
 }
 
 .toFix{
     color:#BAA899;
     background:#fff;
-    border:solid 1px #BAA899;
+    border:solid 1px #82756A;
 }
 
 

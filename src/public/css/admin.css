@@ -1,24 +1,24 @@
-*{
-    color:#867262;
+* {
+    color: #82756A;
 }
 
-.container{
-    width:80%;
-    margin:0 auto;
+.container {
+    width: 80%;
+    margin: 0 auto;
 }
 
-.page-title{
-    display:block;
-    text-align:center;
+.page-title {
+    display: block;
+    text-align: center;
 }
 
-.logout{
-    display:inline-block;
-    padding:10px 20px;
-    background:#f5f5f5;
-    color:#867262;
-    text-decoration:none;
-    border:solid 1px #867262;
+.logout {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #f5f5f5;
+    color: #82756A;
+    text-decoration: none;
+    border: solid 1px #82756A;
 }
 
 .search-form{
@@ -95,7 +95,7 @@
 
 .column-name{
     text-align:left;
-    background:#a0522d;
+    background:#82756A;
     color:#fff;
     padding:10px 30px;
 }
@@ -134,7 +134,7 @@ span[aria-label="&laquo;"]{
     height:15px;
     width:15px;
     padding:3px;
-    border:solid 1px #867262;
+    border:solid 1px #BAA899;
 }
 
 svg{
@@ -148,7 +148,7 @@ svg{
 }
 
 span[aria-current="page"]{
-    background:#867262;
+    background:#BAA899;
 }
 
 span[aria-current="page"] span{
@@ -172,8 +172,8 @@ span[aria-current="page"] span{
     margin:0 auto;
     outline:none;
     background:#f5f5f5;
-    color:#867262;
-    border:solid 1px #867262;
+    color:#BAA899;
+    border:solid 1px #BAA899;
     text-align:center;
 }
 
@@ -187,7 +187,7 @@ span[aria-current="page"] span{
     border:none;
     padding:10px 30px;
     color:#fff;
-    background:#BAA899;
+    background:#82756A;
     height:unset;
 }
 

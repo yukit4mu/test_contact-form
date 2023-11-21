@@ -1,3 +1,6 @@
+* {
+    font-family: Inika;
+}
 .body-area{
     background:#fff;
     margin:0;
@@ -7,24 +10,20 @@
 
 .header-index{
     display: flex;
-    justify-content:space-between;
-    padding:10px 40px;
-    text-align:center;
-    align-items: center;
+    padding:20px 0px;
+    justify-content: center;
     position:relative;
-    border-bottom:1px solid #867262;
+    border-bottom:1px solid #BAA899;
     background:#fff;
 }
 
 .header-title{
-    justify-content: center;
+    margin: 0;
+    line-height: 50px;
     color: #8B7969;
-    text-align: center;
-    font-family: Inika;
     font-size: 40px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
     margin: 0;
 }
 

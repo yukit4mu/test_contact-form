@@ -146,4 +146,10 @@ class ContactController extends Controller
         return view('admin', ['contacts' => $contacts]);
     }
 
+    public function delete(Request $request)
+    {
+        $contact = Contact::findOrFail($request->id);
+        $contact->delete();
+        return redirect('/admin');
+    }
 }

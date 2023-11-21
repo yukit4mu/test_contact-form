@@ -9,15 +9,15 @@
     @yield('css')
 </head>
 
-<body class="body-area">
+<body class="body">
     <header class="header-area">
-        <p class="header-title">FashionablyLate</p>
+        <p class="header-ttl">FashionablyLate</p>
         <div class="link-area">
             @yield('header')
         </div>
     </header>
 
-    <main class="main-area">
+    <main class="main">
         @yield('content')
     </main>
     <script></script>

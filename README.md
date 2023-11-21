@@ -22,9 +22,12 @@
 ## ER図
 ```mermaid
 erDiagram
-  contacts ||--o{categories : "親テーブル"
-  categories ||--o{users: "子テーブル"
-  users ||--o{contacts: "fortify認証用"
+
+contacts(親テーブル)
+categories(子テーブル)
+users(fortify認証用)
+
+  contacts ||--o{categories : "relation"
 
   contacts {
     bigint id PK
@@ -57,9 +60,8 @@ erDiagram
     timestamp deleted_at
   }
 ```
-## URL
-・開発環境
+## 開発環境
   - お問い合わせ画面：http://localhost/  
   - ユーザー登録: http://localhost/register  
   - 管理画面: http://localhost/admin  
-・phpMyAdmin：http://localhost:8080/
+  - phpMyAdmin：http://localhost:8080/

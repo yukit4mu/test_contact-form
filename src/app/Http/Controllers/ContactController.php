@@ -96,6 +96,8 @@ class ContactController extends Controller
     {
         $query = Contact::query();
         $contacts = $request->all();
+        $model = new Contact();
+        $columnsCount = count($model->getConnection()->getSchemaBuilder()->getColumnListing($model->getTable()));
 
         $name_email_filter = $request->name_email_filter;
         $gender_dropdown = $request->gender_dropdown;
@@ -120,11 +122,12 @@ class ContactController extends Controller
             $query->where('created_at', '%' . $date_calendar . '%');
         }
 
+        $contacts = $query->Paginate(10);
+
         if (!empty($contacts)) {
-            for ($i = 0; $i < count($contacts); $i++) {
+            for ($i = 0; $i < $columnsCount; $i++) {
                 if (isset($contacts[$i]['gender'])) {
                     $gender_type = $contacts[$i]['gender'];
-
                     if ($gender_type == 1) {
                         $contacts[$i]['gender'] = "男性";
                     } elseif ($gender_type == 2) {
@@ -136,8 +139,6 @@ class ContactController extends Controller
             }
         }
 
-
-        $contacts = $query->Paginate(10);
         return view('admin', ['contacts' => $contacts]);
     }
 

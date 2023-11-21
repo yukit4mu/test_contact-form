@@ -31,6 +31,7 @@
 .name-email{
     width:30%;
     display:flex;
+    border: 1px solid #c0c0c0;
 }
 
 .name_email_filter{

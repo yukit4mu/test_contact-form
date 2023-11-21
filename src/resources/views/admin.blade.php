@@ -65,6 +65,7 @@
                 <th class="column-name">メールアドレス</th>
                 <th class="column-name">お問い合わせの種類</th>
                 <th class="column-name"></th>
+                <th class="column-name"></th>
             </tr>
             @foreach($contacts as $contact)
             <tr>
@@ -72,6 +73,7 @@
                 <td class="gender_get{{$contact['id']}} gender_get">{{$contact['gender']}}</td>
                 <td class="email_get{{$contact['id']}} email_get">{{$contact['email']}}</td>
                 <td class="category_get{{$contact['id']}} category_get">{{$contact->category->getCategory()}}</td>
+                <td class="created_get{{$contact['id']}} created_get"><input type="hidden" value="{{$contact['created_at']}}"></td>
                 <td class="detail_get">
                     <div class="detail-view" id="{{$contact['id']}}">
                         詳細

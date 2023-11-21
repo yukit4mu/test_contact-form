@@ -119,8 +119,10 @@ class ContactController extends Controller
             $query->where('category_id', $category_dropdown);
         }
         if (!empty($date_calendar)) {
-            $query->where('created_at', '%' . $date_calendar . '%');
+            $query->whereDate('created_at', '=', $date_calendar);
         }
+
+
 
         $contacts = $query->Paginate(10);
 

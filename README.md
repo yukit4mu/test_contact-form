@@ -28,7 +28,7 @@
 ```mermaid
 erDiagram
 
-  categories ||--o{contacts : "relation"
+  contacts ||--o{ categories: "relation"
 
   contacts {
     bigint id PK

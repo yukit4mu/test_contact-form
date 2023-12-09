@@ -33,12 +33,13 @@ class CsvDownloadController extends Controller
         $response = new StreamedResponse(function () use ($csvHeader, $contacts) {
             $handle = fopen('php://output', 'w');
 
+            fprintf($handle, chr(0xEF).chr(0xBB).chr(0xBF)); // BOMを付けてUTF-8を明示
             fputcsv($handle, $csvHeader);
 
-
             foreach ($contacts as $contact) {
-
-                $row = array_map('utf8_encode', $contact->toArray());
+                $row = array_map(function ($value) {
+                    return mb_convert_encoding($value, 'UTF-8', 'auto');
+                }, $contact->toArray());
                 fputcsv($handle, $row);
             }
 
@@ -51,4 +52,3 @@ class CsvDownloadController extends Controller
         return $response;
     }
 }
-
